@@ -1,22 +1,28 @@
-import { Column, CreateDateColumn, OneToOne, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm'
-import { Log, Patient } from '.'
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from 'typeorm'
+import { Log } from '.'
 
-@Entity({ name: 'users' })
+@Entity({ name: 'db_users' })
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   id!: number
 
-  @Column()
+  @Column({ nullable: false })
   name?: string
 
   @Column({ unique: true })
   email!: string
+
+  @Column({ nullable: false })
+  image!: string
 
   @Column({ nullable: true })
   password!: string
 
   @Column({ default: false })
   admin?: boolean
+
+  @Column({ name: 'birth_date' })
+  birthDate!: Date
 
   @Column({ name: 'first_access', nullable: true })
   firstAccess?: Date
@@ -29,9 +35,6 @@ export class User {
 
   @UpdateDateColumn({ name: 'updated_at', nullable: true })
   updatedAt?: Date
-
-  @OneToOne(() => Patient, patient => patient.user, { lazy: false })
-  patient?: Patient
 
   @OneToMany(() => Log, log => log.user, { lazy: false })
   logs?: Log[]

@@ -4,7 +4,7 @@ export class User1648165079468 implements MigrationInterface {
   public async up (queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'users',
+        name: 'db_users',
         columns: [
           {
             name: 'id',
@@ -13,7 +13,8 @@ export class User1648165079468 implements MigrationInterface {
           },
           {
             name: 'name',
-            type: 'varchar'
+            type: 'varchar',
+            isNullable: false
           },
           {
             name: 'email',
@@ -21,8 +22,18 @@ export class User1648165079468 implements MigrationInterface {
             isUnique: true
           },
           {
+            name: 'image',
+            type: 'varchar',
+            isNullable: true
+          },
+          {
             name: 'password',
             type: 'varchar',
+            isNullable: false
+          },
+          {
+            name: 'birth_date',
+            type: 'date',
             isNullable: true
           },
           {
@@ -56,6 +67,6 @@ export class User1648165079468 implements MigrationInterface {
   }
 
   public async down (queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('users')
+    await queryRunner.dropTable('db_users')
   }
 }

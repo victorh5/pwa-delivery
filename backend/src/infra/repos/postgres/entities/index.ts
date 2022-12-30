@@ -1,5 +1,3 @@
 export * from './error-log'
 export * from './log'
-export * from './patient-address'
-export * from './patient'
 export * from './user'

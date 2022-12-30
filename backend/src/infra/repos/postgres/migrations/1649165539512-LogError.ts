@@ -4,7 +4,7 @@ export class LogError1649165539512 implements MigrationInterface {
   public async up (queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'error_logs',
+        name: 'db_error_logs',
         columns: [
           {
             name: 'id',

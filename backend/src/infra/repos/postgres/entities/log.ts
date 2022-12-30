@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { User } from '.'
 
-@Entity({ name: 'logs' })
+@Entity({ name: 'db_logs' })
 export class Log {
   @PrimaryGeneratedColumn()
   id!: number
