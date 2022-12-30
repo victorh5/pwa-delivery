@@ -1,2 +1,6 @@
 # pwa-delivery
 projeto pwa para delivery
+
+## BACKEND NODEJS COM TYPESCRIPT
+
+## FRONTEND VUE 3 COMPOSITION API COM TYPESCRIPT
