@@ -1,6 +1,0 @@
-export * from './delete-controller'
-export * from './get-controller'
-export * from './logged-user-controlller'
-export * from './show-controller'
-export * from './update-controller'
-export * from './insert-controller'

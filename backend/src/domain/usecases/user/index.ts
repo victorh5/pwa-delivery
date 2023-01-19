@@ -1,5 +1,0 @@
-export * from './delete-user'
-export * from './list-user'
-export * from './show-user'
-export * from './update-user'
-export * from './insert-user'
